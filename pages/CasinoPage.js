@@ -23,7 +23,8 @@ class CasinoPage extends Component {
     spinnerOne: new Animated.Value(0),
     spinnerTwo: new Animated.Value(0),
     spinnerThree: new Animated.Value(0),
-    mixins: [TimerMixin]
+    mixins: [TimerMixin],
+    stop: false
   };
 
   componentDidMount() {
@@ -32,17 +33,6 @@ class CasinoPage extends Component {
       duration: 1000,
       useNativeDriver: true
     }).start();
-
-    // setTimeout(() => {
-    // this.props.navigator.pop();
-    // push({
-    //   component: MapPage,
-    //   title: "Map Page",
-    //   passProps: {
-    //     navigator: this.props.navigator
-    //   }
-    // });
-    // }, 5000);
   }
 
   render() {
@@ -74,13 +64,25 @@ class CasinoPage extends Component {
           />
         </TouchableOpacity>
         <ScrollView style={{ flex: 1, marginTop: 55 }}>
-          <Slots
-            spinners={{
-              s1: this.state.spinnerOne,
-              s2: this.state.spinnerTwo,
-              s3: this.state.spinnerThree
+          <Slots />
+          <TouchableOpacity
+            style={{
+              flex: 1,
+              marginTop: 20,
+              backgroundColor: "#FF9B42",
+              alignSelf: "center",
+              borderRadius: 10,
+              paddingTop: 8,
+              paddingBottom: 8,
+              paddingLeft: 20,
+              paddingRight: 20
             }}
-          />
+            onPress={() => {
+              this.setState({ stop: true });
+            }}
+          >
+            <Text style={{ fontSize: 24 }}>STOP</Text>
+          </TouchableOpacity>
         </ScrollView>
       </Animated.View>
     );
