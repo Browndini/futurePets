@@ -17,6 +17,7 @@
     "react-game-kit": "^1.0.6",
     "react-native": "0.55.3",
     "react-native-fontawesome": "^5.7.0",
+    "react-native-game-engine": "^0.9.3",
     "react-native-stopwatch-timer": "0.0.20",
     "react-navigation": "^1.5.11",
     "react-number-format": "^3.3.3",
