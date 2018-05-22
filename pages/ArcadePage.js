@@ -64,11 +64,11 @@ export default class ArcadePage extends Component {
           data={Games}
           renderItem={({ item }) => (
             <TouchableHighlight
-              key={item + "TouchableHighlight"}
-              onPress={() => this.onPress(item)}
+              key={item.key + "TouchableHighlight"}
+              onPress={() => this.onPress(item.key)}
             >
               <View
-                key={item + "view"}
+                key={item.key + "view"}
                 style={{
                   height: 60,
                   borderBottomWidth: 0.5,
@@ -80,14 +80,14 @@ export default class ArcadePage extends Component {
                 }}
               >
                 <Image
-                  key={item + "img"}
+                  key={item.key + "img"}
                   style={styles.images}
                   source={{
                     uri: "/Users/kylebrown/futurePets/images/wallet-color.png"
                   }}
                 />
-                <Text key={item + "text"} style={{ marginLeft: 10 }}>
-                  {item}
+                <Text key={item.key + "text"} style={{ marginLeft: 10 }}>
+                  {item.key}
                 </Text>
               </View>
             </TouchableHighlight>

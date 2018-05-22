@@ -5,7 +5,6 @@ import Data from "../json/user.json";
 import React, { Component } from "react";
 import {
   StyleSheet,
-  FlatList,
   View,
   Text,
   ActivityIndicator,

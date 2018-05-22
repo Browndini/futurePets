@@ -1,37 +1,21 @@
 import React, { Component } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { Animated, StyleSheet, Text, View, Image } from "react-native";
+import {
+  Animated,
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity
+} from "react-native";
 import SquareRow from "../components/square/SquareRow";
 import TimerMixin from "react-timer-mixin";
 import MapPage from "./MapPage";
 import * as Actions from "../actions/actions";
+import TitleHeader from "./helperFunctions/TitleHeader";
 
 class BankPage extends Component {
-  state = {
-    fadeAnim: new Animated.Value(0),
-    mixins: [TimerMixin]
-  };
-
-  componentDidMount() {
-    Animated.timing(this.state.fadeAnim, {
-      toValue: 1,
-      duration: 3000,
-      useNativeDriver: true
-    }).start();
-
-    setTimeout(() => {
-      this.props.navigator.pop();
-      // push({
-      //   component: MapPage,
-      //   title: "Map Page",
-      //   passProps: {
-      //     navigator: this.props.navigator
-      //   }
-      // });
-    }, 5000);
-  }
-
   render() {
     const {
       color,
@@ -39,14 +23,13 @@ class BankPage extends Component {
         credits: { checking, savings }
       }
     } = this.props;
-    const { fadeAnim } = this.state;
 
     return (
-      <Animated.View style={[styles.container, { opacity: fadeAnim }]}>
-        <View style={styles.header}>
-          <Text style={styles.headerText}>Bank Of Fumania</Text>
-        </View>
-
+      <Animated.View style={[styles.container]}>
+        <TitleHeader
+          title={"Bank Of Fumania"}
+          callback={() => this.props.navigator.pop()}
+        />
         <View style={styles.sections}>
           <View style={{ flex: 1 }}>
             <Image
@@ -89,8 +72,10 @@ const styles = StyleSheet.create({
     alignContent: "center"
   },
   headerText: {
+    flex: 5,
     fontSize: 40,
-    textAlign: "center"
+    textAlign: "center",
+    position: "absolute"
   },
   header: {
     flex: 0.3,
