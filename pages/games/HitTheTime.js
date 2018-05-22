@@ -4,7 +4,6 @@ import {
   StyleSheet,
   Text,
   View,
-  FlatList,
   TouchableOpacity,
   Image
 } from "react-native";
@@ -49,8 +48,8 @@ class HitTheTime extends Component {
     let scoreToAdd = 1;
     if (timeToScore === 0) {
       scoreToAdd = 20;
-    } else if (timeToScore <= 10) {
-      scoreToAdd = 10;
+    } else if (timeToScore <= 100) {
+      scoreToAdd = 5;
     }
     const disText = `YOU WON ${scoreToAdd} credits!`;
     this.setState({ start: false, display: "flex", displayText: disText });
@@ -191,7 +190,7 @@ class HitTheTime extends Component {
             styles.spinnerStyle,
             {
               opacity: comeIn,
-              transform: [{ scale: scale }, { rotate: spinIn }]
+              transform: [{ scale: scale }]
             }
           ]}
         >

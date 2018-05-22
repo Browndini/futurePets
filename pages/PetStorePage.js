@@ -15,6 +15,7 @@ import { connect } from "react-redux";
 import _ from "lodash";
 import TimerMixin from "react-timer-mixin";
 import * as Actions from "../actions/actions";
+import TitleHeader from "./helperFunctions/TitleHeader";
 
 class PetStorePage extends Component {
   state = {
@@ -86,30 +87,10 @@ class PetStorePage extends Component {
     } = this.state;
     return [
       <ScrollView key={0} style={styles.container}>
-        <View
-          style={{
-            marginTop: 10,
-            flexDirection: "row",
-            justifyContent: "center",
-            alignContent: "center",
-            alignItems: "center"
-          }}
-        >
-          <TouchableOpacity
-            style={{ flex: 0.5 }}
-            onPressOut={() => this.props.navigator.pop()}
-          >
-            <Image
-              resizeMode="contain"
-              style={{ height: 30, width: 50 }}
-              source={{
-                uri: "/Users/kylebrown/futurePets/images/back.png"
-              }}
-            />
-          </TouchableOpacity>
-          <Text style={styles.headerText}>Pet Store</Text>
-          <Text style={{ flex: 0.5 }} />
-        </View>
+        <TitleHeader
+          title={"Pet Store"}
+          callback={() => this.props.navigator.pop()}
+        />
         <View
           style={{
             marginTop: 10,
