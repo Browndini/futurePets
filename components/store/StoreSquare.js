@@ -30,6 +30,7 @@ class StoreSquare extends Component {
     }).start();
   }
   render() {
+    console.log("store square");
     const { flipIn } = this.state;
     const {
       health,

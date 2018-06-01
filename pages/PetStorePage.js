@@ -120,11 +120,7 @@ class PetStorePage extends Component {
         style={[
           styles.opacityDisplay,
           {
-            transform: [
-              {
-                translateX: comeInTop
-              }
-            ],
+            transform: [{ translateX: comeInTop }],
             opacity: fadeAnim,
             display: display
           }
@@ -156,9 +152,7 @@ class PetStorePage extends Component {
             <Image
               resizeMode="contain"
               style={{ height: 30, width: 30 }}
-              source={{
-                uri: "/Users/kylebrown/futurePets/images/cancel-white.png"
-              }}
+              source={require("../images/icons/cancel-white.png")}
             />
           </View>
           <View
@@ -180,9 +174,7 @@ class PetStorePage extends Component {
               <Image
                 resizeMode="contain"
                 style={{ height: 120, width: 120 }}
-                source={{
-                  uri: petStats.image
-                }}
+                source={{ uri: petStats.image }}
               />
             </View>
           </View>

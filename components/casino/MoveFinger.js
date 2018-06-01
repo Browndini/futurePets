@@ -5,7 +5,6 @@ const MoveFinger = (entities, { touches }) => {
   //-- That said, it's probably worth considering performance implications in either case.
 
   touches.filter(t => t.type === "move").forEach(t => {
-    console.log(t);
     let finger = entities[1];
     if (finger && finger.position) {
       finger.position = [

@@ -22,19 +22,16 @@ const names = [
   "Obi Wan"
 ];
 const images = [
-  "/Users/kylebrown/futurePets/images/bullbasaur.png",
-  "/Users/kylebrown/futurePets/images/charmander.png",
-  "/Users/kylebrown/futurePets/images/snorlax.png",
-  "/Users/kylebrown/futurePets/images/psyduck.png",
-  "/Users/kylebrown/futurePets/images/squirtle.png",
-  "/Users/kylebrown/futurePets/images/mankey.png",
-  "/Users/kylebrown/futurePets/images/pikachu.png",
-  "/Users/kylebrown/futurePets/images/jigglypuff.png"
+  "https://s3-us-west-2.amazonaws.com/futurepets/pets/bullbasaur.png",
+  "https://s3-us-west-2.amazonaws.com/futurepets/pets/charmander.png",
+  "https://s3-us-west-2.amazonaws.com/futurepets/pets/snorlax.png",
+  "https://s3-us-west-2.amazonaws.com/futurepets/pets/psyduck.png",
+  "https://s3-us-west-2.amazonaws.com/futurepets/pets/squirtle.png",
+  "https://s3-us-west-2.amazonaws.com/futurepets/pets/mankey.png",
+  "https://s3-us-west-2.amazonaws.com/futurepets/pets/pikachu.png",
+  "https://s3-us-west-2.amazonaws.com/futurepets/pets/jigglypuff.png"
 ];
 class Square extends Component {
-  constructor(props) {
-    super(props);
-  }
   setColor(color) {
     return randomColor({
       luminosity: "bright",

@@ -74,7 +74,6 @@ class Spinner extends Component {
       this.spin(this.state.spinnerFive, this.state.visFive),
       this.spin(this.state.spinnerSix, this.state.visSix)
     ]).start(e => {
-      console.log("spin thing ", e);
       if (e.finished) {
         this.loopin();
       }
@@ -117,103 +116,65 @@ class Spinner extends Component {
           resizeMode="contain"
           style={[
             styles.imageAnimate,
-
-            {
-              opacity: visOne,
-              transform: [
-                {
-                  translateY: spinnerOne
-                }
-              ]
-            }
+            { opacity: visOne, transform: [{ translateY: spinnerOne }] }
           ]}
           source={{
-            uri: "/Users/kylebrown/futurePets/images/casino/moneyBag.png"
+            uri:
+              "https://s3-us-west-2.amazonaws.com/futurepets/casino/moneyBag.png"
           }}
         />
         <Animated.Image
           resizeMode="contain"
           style={[
             styles.imageAnimate,
-            {
-              opacity: visTwo,
-              transform: [
-                {
-                  translateY: spinnerTwo
-                }
-              ]
-            }
+            { opacity: visTwo, transform: [{ translateY: spinnerTwo }] }
           ]}
           source={{
-            uri: "/Users/kylebrown/futurePets/images/casino/bell.png"
+            uri: "https://s3-us-west-2.amazonaws.com/futurepets/casino/bell.png"
           }}
         />
         <Animated.Image
           resizeMode="contain"
           style={[
             styles.imageAnimate,
-            {
-              opacity: visThree,
-              transform: [
-                {
-                  translateY: spinnerThree
-                }
-              ]
-            }
+            { opacity: visThree, transform: [{ translateY: spinnerThree }] }
           ]}
           source={{
-            uri: "/Users/kylebrown/futurePets/images/casino/diamond.png"
+            uri:
+              "https://s3-us-west-2.amazonaws.com/futurepets/casino/diamond.png"
           }}
         />
         <Animated.Image
           resizeMode="contain"
           style={[
             styles.imageAnimate,
-            {
-              opacity: visFour,
-              transform: [
-                {
-                  translateY: spinnerFour
-                }
-              ]
-            }
+            { opacity: visFour, transform: [{ translateY: spinnerFour }] }
           ]}
           source={{
-            uri: "/Users/kylebrown/futurePets/images/casino/cherry.png"
+            uri:
+              "https://s3-us-west-2.amazonaws.com/futurepets/casino/cherry.png"
           }}
         />
         <Animated.Image
           resizeMode="contain"
           style={[
             styles.imageAnimate,
-            {
-              opacity: visFive,
-              transform: [
-                {
-                  translateY: spinnerFive
-                }
-              ]
-            }
+            { opacity: visFive, transform: [{ translateY: spinnerFive }] }
           ]}
           source={{
-            uri: "/Users/kylebrown/futurePets/images/casino/seven.png"
+            uri:
+              "https://s3-us-west-2.amazonaws.com/futurepets/casino/seven.png"
           }}
         />
         <Animated.Image
           resizeMode="contain"
           style={[
             styles.imageAnimate,
-            {
-              opacity: visSix,
-              transform: [
-                {
-                  translateY: spinnerSix
-                }
-              ]
-            }
+            { opacity: visSix, transform: [{ translateY: spinnerSix }] }
           ]}
           source={{
-            uri: "/Users/kylebrown/futurePets/images/casino/horseshoe.png"
+            uri:
+              "https://s3-us-west-2.amazonaws.com/futurepets/casino/horseshoe.png"
           }}
         />
       </View>

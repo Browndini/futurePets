@@ -49,7 +49,6 @@ class HomePetPage extends Component {
       },
       pets
     } = this.props;
-    console.log(this.props);
     const { fadeAnim } = this.state;
 
     return (
@@ -62,16 +61,12 @@ class HomePetPage extends Component {
             resizeMode="contain"
             style={{ height: 30, width: 50 }}
             source={{
-              uri: "/Users/kylebrown/futurePets/images/back.png"
+              uri:
+                "https://s3-us-west-2.amazonaws.com/futurepets/icons/back.png"
             }}
           />
         </TouchableOpacity>
-        <ScrollView
-          style={{
-            flex: 1,
-            marginTop: 70
-          }}
-        >
+        <ScrollView style={{ flex: 1, marginTop: 70 }}>
           <View
             style={{
               flexWrap: "wrap",
@@ -82,13 +77,11 @@ class HomePetPage extends Component {
             }}
           >
             {_.map(pets, (pet, index) => {
-              console.log("here");
               return (
                 <TouchableOpacity
                   key={index}
                   onPress={() => {
                     // this.props.popUpButton();
-                    console.log("clicked");
                   }}
                   style={[
                     styles.singleBox,
@@ -98,9 +91,7 @@ class HomePetPage extends Component {
                   <Image
                     resizeMode="contain"
                     style={styles.images}
-                    source={{
-                      uri: pet.image
-                    }}
+                    source={{ uri: pet.image }}
                   />
                   <Text style={styles.nameText}>{pet.name}</Text>
                   <View

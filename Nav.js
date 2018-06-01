@@ -8,7 +8,7 @@ import {
   TouchableHighlight,
   AsyncStorage
 } from "react-native";
-import SquarePage from "./pages/SquarePage";
+import LoadingPage from "./pages/LoadingPage";
 
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
@@ -18,26 +18,16 @@ import * as Actions from "./actions/actions";
 class Nav extends Component {
   constructor(props) {
     super(props);
-    AsyncStorage.removeItem("user");
-    this.props.setData();
-    try {
-      AsyncStorage.getItem("user").then(r => {
-        console.log("get storage ", r);
-      });
-    } catch (error) {
-      // console.log("first");
-      // Error saving data
-    }
+    // AsyncStorage.removeItem("user");
+    this.props.actionGetData();
   }
   render() {
+    // console.log("props ", this.props);
     return (
       <NavigatorIOS
         ref="nav"
         navigationBarHidden={true}
-        initialRoute={{
-          component: SquarePage,
-          title: "InstaFake"
-        }}
+        initialRoute={{ component: LoadingPage, title: "Main Page" }}
         style={{ flex: 1 }}
       />
     );
@@ -45,8 +35,7 @@ class Nav extends Component {
 }
 function mapStateToProps(state, props) {
   return {
-    userName: state.user.userName,
-    data: state.user.data
+    ...state
   };
 }
 

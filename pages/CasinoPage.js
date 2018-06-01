@@ -28,18 +28,6 @@ export default class BestGameEver extends PureComponent {
       squareStart: -100
     };
   }
-  // updateHandler = ({ touches, screen, time }) => {
-  //   touches.find(x => console.log(x));
-  //   let move = touches.find(x => x.type === "move");
-  //   if (move) {
-  //     this.setState({
-  //       x: this.state.x + move.delta.pageX,
-  //       y: this.state.y + move.delta.pageY,
-  //       squareX: this.state.squareX + move.delta.pageX,
-  //       squareY: this.state.squareY + move.delta.pageY
-  //     });
-  //   }
-  // };
 
   render() {
     return (
@@ -51,7 +39,10 @@ export default class BestGameEver extends PureComponent {
           <Image
             resizeMode="contain"
             style={{ height: 30, width: 50 }}
-            source={{ uri: "/Users/kylebrown/futurePets/images/back.png" }}
+            source={{
+              uri:
+                "https://s3-us-west-2.amazonaws.com/futurepets/icons/back.png"
+            }}
           />
         </TouchableOpacity>
         <GameEngine

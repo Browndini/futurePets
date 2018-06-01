@@ -50,7 +50,6 @@ class HomePage extends Component {
       },
       pets
     } = this.props;
-    // console.log(this.props);
     const { fadeAnim } = this.state;
 
     return (
@@ -62,7 +61,10 @@ class HomePage extends Component {
           <Image
             resizeMode="contain"
             style={{ height: 30, width: 50 }}
-            source={{ uri: "/Users/kylebrown/futurePets/images/back.png" }}
+            source={{
+              uri:
+                "https://s3-us-west-2.amazonaws.com/futurepets/icons/back.png"
+            }}
           />
         </TouchableOpacity>
         <ScrollView style={{ flex: 1, marginTop: 55 }}>
@@ -78,7 +80,6 @@ class HomePage extends Component {
             <View
               onPress={() => {
                 // this.props.popUpButton();
-                console.log("clicked");
               }}
               style={[
                 styles.singleBox,
@@ -101,13 +102,14 @@ class HomePage extends Component {
                 <Text style={{ fontSize: 24 }}>Pets</Text>
                 <ScrollView
                   horizontal={true}
-                  style={{
-                    flexDirection: "row",
-                    // justifyContent: "center",
-                    alignContent: "center",
-                    paddingBottom: 5
+                  style={
+                    {
+                      flexDirection: "row", // justifyContent: "center",
+                      alignContent: "center",
+                      paddingBottom: 5
+                    }
                     // alignItems: "center"
-                  }}
+                  }
                 >
                   {_.map(pets, (pet, index) => {
                     return <Pet data={pet} key={index} />;
@@ -129,7 +131,6 @@ class HomePage extends Component {
             <View
               onPress={() => {
                 // this.props.popUpButton();
-                console.log("clicked");
               }}
               style={[
                 styles.singleBox,
@@ -160,14 +161,15 @@ class HomePage extends Component {
                 </Text>
                 <ScrollView
                   horizontal={true}
-                  style={{
-                    flexDirection: "row",
-                    width: "100%",
-                    // justifyContent: "center",
-                    alignContent: "center",
-                    paddingBottom: 5
+                  style={
+                    {
+                      flexDirection: "row",
+                      width: "100%", // justifyContent: "center",
+                      alignContent: "center",
+                      paddingBottom: 5
+                    }
                     // alignItems: "center"
-                  }}
+                  }
                 >
                   {_.map(pets, (pet, index) => {
                     return <Pet data={pet} key={index} />;

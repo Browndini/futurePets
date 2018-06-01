@@ -1,5 +1,11 @@
 import React, { Component } from "react";
-import { Animated, StyleSheet, Text, View } from "react-native";
+import {
+  Animated,
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity
+} from "react-native";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import SquareRow from "../components/square/SquareRow";
@@ -14,23 +20,14 @@ class FirstPetPage extends Component {
   };
 
   componentDidMount() {
-    this.props.getStore();
-
     Animated.timing(this.state.fadeAnim, {
       toValue: 1,
       duration: 200,
       useNativeDriver: true
     }).start();
 
-    setTimeout(() => {
-      this.props.navigator.push({
-        component: MapPage,
-        title: "Map Page",
-        passProps: {
-          navigator: this.props.navigator
-        }
-      });
-    }, 800);
+    // setTimeout(() => {
+    // }, 800);
   }
 
   render() {
@@ -43,23 +40,26 @@ class FirstPetPage extends Component {
           ? color + "00"
           : color;
     return (
-      <View style={styles.container}>
+      <TouchableOpacity
+        onPress={() => {
+          console.log("first pet 2");
+          this.props.navigator.push({
+            component: MapPage
+          });
+        }}
+        style={styles.container}
+      >
         <View style={styles.header}>
           <Text style={[styles.headerText, { flex: 0.5 }]}>YOU GOT A</Text>
           <Text style={[styles.headerText, { flex: 0.3 }]}>{wholeColor}</Text>
         </View>
         <Animated.View
           style={[
-            {
-              flex: 1,
-              backgroundColor: `#${wholeColor}`
-            },
-            {
-              opacity: fadeAnim
-            }
+            { flex: 1, backgroundColor: `#${wholeColor}` },
+            { opacity: fadeAnim }
           ]}
         />
-      </View>
+      </TouchableOpacity>
     );
   }
 }

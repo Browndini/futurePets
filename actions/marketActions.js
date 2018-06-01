@@ -1,36 +1,29 @@
 import * as actionTypes from "./actionTypes";
 import _ from "lodash";
+//Import the sample data
 import Data from "../json/user.json";
-import { AsyncStorage } from "react-native";
+import React, { Component } from "react";
+import {
+  StyleSheet,
+  View,
+  Text,
+  ActivityIndicator,
+  NavigatorIOS,
+  TouchableHighlight,
+  AsyncStorage
+} from "react-native";
 
-// export function actionSetData() {
-//   try{
-//     getData();
-//   }catch(err){
-
-//   }
-//   await AsyncStorage.setItem("user", JSON.stringify(Data));
-//   // return getData();
-// }
-
-export function actionGetData() {
-  try {
-    AsyncStorage.setItem("user", JSON.stringify(Data));
-  } catch (err) {
-    console.log("error actsion get data");
-  }
+export function setData() {
+  AsyncStorage.setItem("user", JSON.stringify(Data));
   return getData();
 }
-
 export function getData() {
   return dispatch => {
     AsyncStorage.getItem("user").then(r => {
-      // console.log("get data", JSON.parse(r));
       dispatch({ type: actionTypes.DATA_AVAILABLE, data: JSON.parse(r) });
     });
   };
 }
-
 export function addPet(pet, pets = []) {
   delete pet[0].price;
   if (!_.isEmpty(pets)) {

@@ -1,0 +1,20 @@
+[
+  {
+    "name": "dart",
+    "price": "100",
+    "description": "Increases a single pet's accuracy by 5",
+    "image": "/Users/kylebrown/futurePets/images/market/dart.png"
+  },
+  {
+    "name": "ticket",
+    "price": "1000",
+    "description": "A ticket to the next town!",
+    "image": "/Users/kylebrown/futurePets/images/market/ticket.png"
+  },
+  {
+    "name": "Watermelon",
+    "price": "110",
+    "description": "Raise a single pet's stamina by 5",
+    "image": "/Users/kylebrown/futurePets/images/market/watermelon.png"
+  }
+]

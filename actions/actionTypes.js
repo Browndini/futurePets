@@ -4,4 +4,6 @@ export const ADD_CREDITS = "ADD_CREDITS";
 export const REMOVE_CREDITS = "REMOVE_CREDITS";
 export const CREATE_USER = "CREATE_USER";
 export const GET_STORE = "GET_STORE";
+export const GET_MARKET = "GET_MARKET";
 export const BUY_PET_STORE = "BUY_PET_STORE";
+export const BUY_ITEM_MARKET = "BUY_ITEM_MARKET";

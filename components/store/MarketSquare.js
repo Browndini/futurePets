@@ -30,7 +30,7 @@ class MarketSquare extends Component {
     }).start();
   }
   render() {
-    const { image, name } = this.props.item;
+    const { image, name, price } = this.props.item;
     return (
       <View
         style={[
@@ -46,7 +46,7 @@ class MarketSquare extends Component {
       >
         <TouchableOpacity
           onPress={() => {
-            // this.props.popUpButton();
+            this.props.popUpButton();
           }}
           style={[
             {
@@ -67,6 +67,7 @@ class MarketSquare extends Component {
             source={{ uri: image }}
           />
           <Text>{name}</Text>
+          <Text>{price} Credits</Text>
         </TouchableOpacity>
       </View>
     );

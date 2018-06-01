@@ -21,10 +21,6 @@ import VideoStorePage from "./VideoStorePage";
 import FarmersMarketPage from "./FarmersMarketPage";
 
 class MapPage extends Component {
-  constructor(props) {
-    super(props);
-    console.log(this.props);
-  }
   nextPage(page) {
     switch (page) {
       case "bank":

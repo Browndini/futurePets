@@ -52,14 +52,7 @@ export default class ArcadePage extends Component {
   render() {
     const { fadeAnim } = this.state;
     return (
-      <Animated.View
-        style={[
-          styles.container,
-          {
-            opacity: fadeAnim
-          }
-        ]}
-      >
+      <Animated.View style={[styles.container, { opacity: fadeAnim }]}>
         <FlatList
           data={Games}
           renderItem={({ item }) => (
@@ -83,7 +76,8 @@ export default class ArcadePage extends Component {
                   key={item.key + "img"}
                   style={styles.images}
                   source={{
-                    uri: "/Users/kylebrown/futurePets/images/wallet-color.png"
+                    uri:
+                      "https://s3-us-west-2.amazonaws.com/futurepets/icons/wallet-color.png"
                   }}
                 />
                 <Text key={item.key + "text"} style={{ marginLeft: 10 }}>

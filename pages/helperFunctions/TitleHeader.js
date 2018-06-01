@@ -25,7 +25,8 @@ class TitleHeader extends Component {
             resizeMode="contain"
             style={{ height: 30, width: 30 }}
             source={{
-              uri: "/Users/kylebrown/futurePets/images/back.png"
+              uri:
+                "https://s3-us-west-2.amazonaws.com/futurepets/icons/back.png"
             }}
           />
         </TouchableOpacity>

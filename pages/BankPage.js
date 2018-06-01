@@ -35,7 +35,8 @@ class BankPage extends Component {
             <Image
               style={styles.images}
               source={{
-                uri: "/Users/kylebrown/futurePets/images/wallet-color.png"
+                uri:
+                  "https://s3-us-west-2.amazonaws.com/futurepets/icons/wallet-color.png"
               }}
             />
           </View>
@@ -50,7 +51,8 @@ class BankPage extends Component {
             <Image
               style={styles.images}
               source={{
-                uri: "/Users/kylebrown/futurePets/images/piggy-bank-color.png"
+                uri:
+                  "https://s3-us-west-2.amazonaws.com/futurepets/icons/piggy-bank-color.png"
               }}
             />
           </View>
