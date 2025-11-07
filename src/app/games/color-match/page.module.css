@@ -1,0 +1,118 @@
+.header {
+  text-align: center;
+  margin: 40px 0;
+  color: white;
+}
+
+.header h2 {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.header p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+.startCard {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.instructions {
+  margin-bottom: 32px;
+}
+
+.instructions h3 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: #667eea;
+}
+
+.instructions ul {
+  list-style: none;
+  padding: 0;
+}
+
+.instructions li {
+  padding: 12px 0;
+  font-size: 16px;
+  color: #555;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.instructions li:last-child {
+  border-bottom: none;
+}
+
+.startCard button {
+  width: 100%;
+}
+
+.resultCard {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.resultCard h3 {
+  font-size: 32px;
+  margin-bottom: 32px;
+  color: #667eea;
+}
+
+.resultStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+  padding: 24px;
+  background: #f9fafb;
+  border-radius: 12px;
+}
+
+.resultStat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.resultStat span {
+  font-size: 14px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.resultStat strong {
+  font-size: 28px;
+  color: #333;
+}
+
+.resultActions {
+  display: flex;
+  gap: 12px;
+}
+
+.resultActions button {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .resultStats {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .resultActions {
+    flex-direction: column;
+  }
+}
